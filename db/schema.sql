@@ -1,13 +1,13 @@
--- DELETES DATABASE IF EXISTS
+
 DROP DATABASE IF EXISTS burgers_db;
--- CREATES DATABASE
+
 CREATE DATABASE burgers_db;
 USE burgers_db; 
 
---CREATES TABLE
+
 CREATE TABLE burgers(
     id INT NOT NULL AUTO_INCREMENT, 
-    burger_name VARCHAR (50) NOT NULL,
-    devoured BOOLEAN DEFAULT false, 
-    PRIMARY KEY(id)
+    burger_name VARCHAR (255) NOT NULL,
+    devoured BOOLEAN DEFAULT false,
+    PRIMARY KEY (id) 
 );
