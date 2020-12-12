@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>WELCOME TO GOOD BURGER!</h1>
+
+    <p>Can I take your order?</p>
+    </hr>
+
+    <h2>Add a burger please</h2>
+    <form class="create-form">
+      <div class="form-group">
+        <input type="text" id="freshBurger" name="name">
+      </div>
+
+      <button type="submit">Create</button>
+    </form>
+
+  </div>
+
+  <div class="row">
+    <div class=col-sm-6>
+      <h3>Order up</h3>
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        <li>
+          <span>{{this.burger_name}}</span>
+          <button type="button" class="nomnom btn btn-warning" id="nomnom" data-id="{{this.id}}"
+            data-newDevoured="{{devour}}"><span>NOM! NOM! NOM!</span></button>
+        </li>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+
+<div class="col-sm-6">
+    <h3>PAST ORDERS</h3>
+    <ul>
+      {{#each burgers}}
+      {{#if devoured}}
+      <li>
+        <span>{{this.burger_name}}</span>
+      </li>
+      {{/if}}
+      {{/each}}
+    </ul>
+    </div>
+  </div>
+
+</div>
