@@ -4,16 +4,16 @@ var express = require("express");
 var router = express.Router();
 
 //IMPORT BURGER.JS MODEL
-var burger = require("../models/burger")
+var burger = require("../models/burger.js")
 
 //GET ROUTE
 router.get("/", function (req, res) {
     burger.selectAll(function (data) {
-        var hbsObject = {
-            burgers: data
-        };
-        console.log(hbsObject);
-        res.render("index", hbsObject);
+      var hbsObject = {
+        burgers: data,
+      };
+      console.log(hbsObject);
+      res.render("index", hbsObject);
     });
 });
 
