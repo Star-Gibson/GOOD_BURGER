@@ -19,7 +19,7 @@ The GOOD BURGER application demonstrates the use of Node.js, Express.js, MySQL a
 Clone the repository, then using the terminal run npm install to ensure you have the necessary dependencies.
 
 ## Usage
-Run the application by entering `npm run watch` into the command line and then go to http://localhost:8080
+Run the application by entering `npm run watch` into the command line and then go to be sure to change the database settings locally if you would like to use the application on your own device, or feel free to visit the live application (link in Questions).
 
 ## Test
 Run npm test within the terminal.
