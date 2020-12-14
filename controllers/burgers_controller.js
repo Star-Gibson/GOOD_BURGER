@@ -4,11 +4,11 @@ var express = require("express");
 var router = express.Router();
 
 //IMPORT BURGER.JS MODEL
-var burger = require("../models/burger.js")
+var burger = require("../models/burger")
 
 //GET ROUTE
 router.get("/", function (req, res) {
-    burger.selectAll(function (data) {
+    burger.selectAll(function (data) { 
       var hbsObject = {
         burgers: data,
       };
@@ -16,7 +16,6 @@ router.get("/", function (req, res) {
       res.render("index", hbsObject);
     });
 });
-
 //POST ROUTE
 router.post("/api/burgers", function (req, res) {
     burger.insertOne([
@@ -29,12 +28,10 @@ router.post("/api/burgers", function (req, res) {
             res.json({ id: result.insertId });
         });
 });
-
 //PUT ROUTE
 router.put("/api/burgers/:id", function (req, res) {
     let condition = "id = " + req.params.id;
     console.log("condition", condition);
-
     burger.updateOne(
         { devoured: req.body.devoured }, condition, function (result) {
             if (result.changedRows == 0) {
@@ -46,5 +43,4 @@ router.put("/api/burgers/:id", function (req, res) {
         }
     )
 });
-
 module.exports = router;

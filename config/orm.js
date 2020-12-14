@@ -38,7 +38,7 @@ var orm = {
       cb(result);
     });
   },
-
+  
   //ADD A BURGER
   insertOne: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
