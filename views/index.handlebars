@@ -1,21 +1,19 @@
 <div class="container">
   <div class="jumbotron">
     <h1>WELCOME TO GOOD BURGER!</h1>
+<br>
+    <h2>Can I take your order?</h2>
 
-    <p>Can I take your order?</p>
-    </hr>
-
-    <h2>Add a burger please</h2>
     <form class="create-form">
       <div class="form-group">
         <input type="text" id="freshBurger" name="name">
       </div>
 
-      <button type="submit">Create</button>
+      <button type="submit" class="btn-warning">Place Order</button>
     </form>
 
   </div>
-
+<br> <br>
   <div class="row">
     <div class=col-sm-6>
       <h3>Order up</h3>
@@ -25,7 +23,7 @@
         <li>
           <span>{{this.burger_name}}</span>
           <button type="button" class="nomnom btn btn-warning" id="nomnom" data-id="{{this.id}}"
-            data-newDevoured="{{devoured}}"><span>NOM! NOM! NOM!</span></button>
+            data-newDevoured="{{devoured}}"><span>NOM!</span></button>
         </li>
         {{/unless}}
         {{/each}}

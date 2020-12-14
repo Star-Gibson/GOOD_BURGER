@@ -1,0 +1,19 @@
+body {
+    background-color: peachpuff;
+}
+
+.jumbotron {
+    justify-content: center; 
+    display: grid;
+    justify-items: center;
+}
+
+form.create-form{
+    justify-content: center;
+    display: flex;
+}
+
+.col-sm-6{
+    justify-content: center;
+    display: inline-grid;
+}
