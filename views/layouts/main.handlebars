@@ -1,17 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOOD BURGER</title>
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="../../public/assets/js/burgers.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
 
 </head>
+
 <body>
     {{{body}}}
+
+    <script>
+        $(function () {
+            $(".create-form").on("submit", function (event) {
+                event.preventDefault();
+
+                var freshBurger = {
+                    // LINK TO HANDLEBARS FORM "freshBurger"
+                    burger_name: $("#freshBurger").val().trim(),
+                    devoured: 0
+                };
+
+                // POST REQUEST
+                $.ajax("/api/burgers", {
+                    type: "POST",
+                    data: freshBurger
+                }).then(
+                    function () {
+                        console.log("ORDER UP!");
+                        // RELOADS PAGE TO RECEIVE UPDATED LIST
+                        location.reload();
+                    }
+                );
+            });
+
+            //ONCLICK - NOMNOM
+            $(".nomnom").on("click", function (event) {
+                var id = $(this).data("id");
+                // CHANGES DEVOURED VALUE to 1
+                var boolean = {
+                    devoured: 1
+                };
+
+                //PUT REQUEST
+                $.ajax("/api/burgers/" + id, {
+                    type: "PUT",
+                    data: boolean
+                }).then(
+                    function () {
+                        console.log("changed devoured to", boolean);
+                        // RELOADS PAGE TO RECEIVE UPDATED LIST
+                        location.reload();
+                    }
+                );
+            });
+        })</script>
 </body>
+
 </html>
