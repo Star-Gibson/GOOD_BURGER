@@ -1,9 +1,11 @@
 
-# Professional README Generator
+# GOOD BURGER
 [![Generic badge](https://img.shields.io/badge/License-MIT-blue.svg)](https://shields.io/)
 
 ## Project Description: 
 The GOOD BURGER application demonstrates the use of Node.js, Express.js, MySQL and Handlebars in creating a CRUD application. GOOD BURGER lets users create burgers and logs when they are devoured. When a user creates a burger the name is stored in a database. The name of the burger is displayed using a call to the database along with an option to devour the burgers. Devoured burgers are displayed to the user.
+
+![localhost_8080_](https://user-images.githubusercontent.com/72622031/102141711-495abb00-3e2f-11eb-8ec9-106f9b8ebc8e.png)
 
 ## Table of Contents
   * [Installation](#installation)
